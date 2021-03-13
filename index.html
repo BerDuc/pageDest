@@ -15,7 +15,7 @@
 <script>
     let urlParams = new URLSearchParams(window.location.search);
     let keys = urlParams.keys()
-    for(const key of keys){ console.log(key)
+    for(const key of keys){ 
         let paramHTML = document.createElement("li")
         paramHTML.innerHTML = "Paramère "+key+" : "+urlParams.get(key); 
         document.getElementById("listParams").appendChild(paramHTML)
