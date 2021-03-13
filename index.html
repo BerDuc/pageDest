@@ -7,20 +7,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
 </head>
 <body>
+    <div class="hero is-primary">Vous êtes arrivé à destination</div>
     <div class="container is-max-desktop">
         <iframe src="https://giphy.com/embed/l378AeyTYZKTLXiuY" width="240" height="201" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
     </div>
-    <div><ul id="listParams"></ul></div>
+    <div class="container"><ul id="listParams"></ul></div>
 <script>
-    console.log("hey")
     let urlParams = new URLSearchParams(window.location.search);
-
-    console.log(urlParams)
-    console.log(urlParams.has("machin"))
-    console.log(urlParams.keys.length)
     let keys = urlParams.keys()
-    console.log("keys: "+keys)
-    console.log("fin")
     for(const key of keys){ console.log(key)
         let paramHTML = document.createElement("li")
         paramHTML.innerHTML = "Paramère "+key+" : "+urlParams.get(key); 
