@@ -18,10 +18,12 @@
     console.log(urlParams)
     console.log(urlParams.has("machin"))
     console.log(urlParams.keys.length)
-    urlParams.keys().forEach(key =>{
+    let keys = urlParams.keys()
+    for(const key of keys){
         let paramHTML = document.createElement("li")
         paramHTML.innerHTML = "Paramère "+key+" : "+urlParams.get(key); 
-    })
+    }
+    
 
 </script>   
 </body>
