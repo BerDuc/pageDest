@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+</head>
+<body>
+    <div class="container is-max-desktop">
+        <iframe src="https://giphy.com/embed/l378AeyTYZKTLXiuY" width="240" height="201" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+    </div>
+    <div><ul id="listParams"></ul></div>
+<script>
+    console.log("hey")
+    let urlParams = new URLSearchParams(window.location.search);
+    console.log(urlParams)
+    urlParams.forEach(param =>{
+        let paramHTML = document.createElement("li")
+        paramHTML.innerHTML = "Paramère "+param.key+" : "+param.value; 
+    })
+
+</script>   
+</body>
+</html>
