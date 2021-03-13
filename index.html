@@ -14,7 +14,9 @@
 <script>
     console.log("hey")
     let urlParams = new URLSearchParams(window.location.search);
+
     console.log(urlParams)
+    console.log(urlParams.has("machin"))
     urlParams.forEach(param =>{
         let paramHTML = document.createElement("li")
         paramHTML.innerHTML = "Paramère "+param.key+" : "+param.value; 
