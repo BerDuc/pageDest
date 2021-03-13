@@ -18,9 +18,9 @@
     console.log(urlParams)
     console.log(urlParams.has("machin"))
     console.log(urlParams.keys.length)
-    urlParams.forEach(param =>{
+    urlParams.keys.forEach(key =>{
         let paramHTML = document.createElement("li")
-        paramHTML.innerHTML = "Paramère "+param.key+" : "+param.value; 
+        paramHTML.innerHTML = "Paramère "+key+" : "+urlParams.get(key); 
     })
 
 </script>   
