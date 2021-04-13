@@ -23,7 +23,7 @@
     let keys = urlParams.keys()
     for(const key of keys){ 
         let paramHTML = document.createElement("li")
-        paramHTML.innerHTML = "Paramère "+key+" : "+urlParams.get(key); 
+        paramHTML.innerHTML = "key+" : "+urlParams.get(key); 
         document.getElementById("listParams").appendChild(paramHTML)
     }
     //https://www.sitepoint.com/get-url-parameters-with-javascript/
