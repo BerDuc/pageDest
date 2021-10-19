@@ -27,10 +27,10 @@
     </div>
 <script>
     let urlParams = new URLSearchParams(window.location.search);
-<<<<<<< HEAD
-    if(urlParams.length >0){
-        let keys = urlParams.keys()
-        
+    let keys = urlParams.keys()
+    
+
+    if(Array.from(urlParams).length > 0){
         let titreParam = document.createElement("p")
             titreParam.innerHTML = "<b>Paramètres</b>"
             document.getElementById("paramDiv").appendChild(titreParam)
@@ -39,18 +39,11 @@
             paramHTML.innerHTML = key+" : "+urlParams.get(key); 
             document.getElementById("listParams").appendChild(paramHTML)
         }
-=======
-    let keys = urlParams.keys()
-    for(const key of keys){ 
-        let paramHTML = document.createElement("li")
-        paramHTML.innerHTML = key+" : "+urlParams.get(key); 
-        document.getElementById("listParams").appendChild(paramHTML)
->>>>>>> 43c02b7e22d63af9b34c3a0a794f39503a816412
     }
+
     let urlFragments = window.location.hash.substring(1); 
     urlFragments = urlFragments.split("&"); 
-
-    if(urlFragments.length >0){
+    if(urlFragments[0] != ""){
         let titreFragment = document.createElement("p"); 
         titreFragment.innerHTML = "<b>Liste des fragments</b>"; 
         document.getElementById("fragDiv").appendChild(titreFragment); 
