@@ -17,17 +17,41 @@
             <img src="https://sciencemadefun.net/blog/wp-content/uploads/2020/04/gesture-772977_1920-768x512.jpg" width="240" height="201" frameBorder="0" allowFullScreen></img>
         </div>
     </div>
-    <div class="container"><ul id="listParams"></ul></div>
+    <div class="container">
+        <div id="paramDiv"></div>
+        <ul id="listParams"></ul>
+    </div>
+    <div class="container">
+        <div id="fragDiv"></div>
+        <ul id="listFragment"></ul>
+    </div>
 <script>
     let urlParams = new URLSearchParams(window.location.search);
-    let keys = urlParams.keys()
-    for(const key of keys){ 
-        let paramHTML = document.createElement("li")
-        paramHTML.innerHTML = "Paramère "+key+" : "+urlParams.get(key); 
-        document.getElementById("listParams").appendChild(paramHTML)
+    if(urlParams.length >0){
+        let keys = urlParams.keys()
+        
+        let titreParam = document.createElement("p")
+            titreParam.innerHTML = "<b>Paramètres</b>"
+            document.getElementById("paramDiv").appendChild(titreParam)
+                for(const key of keys){ 
+            let paramHTML = document.createElement("li")
+            paramHTML.innerHTML = key+" : "+urlParams.get(key); 
+            document.getElementById("listParams").appendChild(paramHTML)
+        }
     }
-    //https://www.sitepoint.com/get-url-parameters-with-javascript/
+    let urlFragments = window.location.hash.substring(1); 
+    urlFragments = urlFragments.split("&"); 
 
+    if(urlFragments.length >0){
+        let titreFragment = document.createElement("p"); 
+        titreFragment.innerHTML = "<b>Liste des fragments</b>"; 
+        document.getElementById("fragDiv").appendChild(titreFragment); 
+        for(let fragment of urlFragments){
+            let fragmentHTML = document.createElement("li");
+            fragmentHTML.innerHTML = fragment; 
+            document.getElementById("listFragment").appendChild(fragmentHTML); 
+        }
+    } 
 </script>   
 </body>
 </html>
